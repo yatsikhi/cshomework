@@ -1,0 +1,76 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="AvaloniaApplication1.MainWindow"
+        Title="homework"
+        Width="300"
+        Height="400"
+        Background="#f0f0f0">
+
+    <Grid ColumnDefinitions="50, *, 50" RowDefinitions="50, 200, 100, *">
+
+        <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Content="Sign In" Click="Sign_in"
+                    Margin="0,0,10,0"
+                    Padding="10,5" 
+                    Background="#e0e0e0"
+                    BorderThickness="0" 
+                    CornerRadius="4"/>
+            <Button Content="Sign Up" Click="Sign_up" 
+                    Padding="10,5"
+                    Background="#e0e0e0"
+                    BorderThickness="0"
+                    CornerRadius="4"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" Spacing="10">
+            <TextBox x:Name="Search"
+                     Watermark="Search..." 
+                     Width="200"
+                     Background="White"
+                     BorderBrush="#d0d0d0"
+                     Padding="10,5"
+                     KeyUp="Search_OnKeyUp"
+                     Foreground="Gray"
+                     HorizontalAlignment="Center"/>
+
+            <ComboBox Width="200"
+                      Padding="10,5" 
+                      Background="White"
+                      BorderBrush="#d0d0d0"
+                      SelectionChanged="filter_box"
+                      Foreground="Gray"
+                      HorizontalAlignment="Center">
+                <ComboBoxItem Tag="fruit" Content="Fruits"/>
+                <ComboBoxItem Tag="veggie" Content="Veggies"/>
+            </ComboBox>
+
+            <ComboBox Width="200" 
+                      Padding="10,5"
+                      Background="White"
+                      BorderBrush="#d0d0d0"
+                      KeyUp="sorting_box"
+                      Foreground="Gray"
+                      HorizontalAlignment="Center">
+                <ComboBoxItem Tag="high" Content="High to low"/>
+                <ComboBoxItem Tag="low" Content="Low to high"/>
+            </ComboBox>
+        </StackPanel>
+
+        <TextBlock Grid.Row="2" Grid.Column="1" x:Name="Message" 
+                   Text="" HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   TextWrapping="Wrap"
+                   Foreground="Black"
+                   Margin="10"/>
+
+        <Button Grid.Row="2" Grid.Column="1" 
+                Content="Result" 
+                HorizontalAlignment="Right" 
+                VerticalAlignment="Bottom" 
+                Click="button_result" 
+                Padding="10,5"
+                Background="#e0e0e0" 
+                BorderThickness="0"
+                CornerRadius="4"/>
+    </Grid>
+</Window>

@@ -1,0 +1,56 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="AvaloniaApplication1.SignInWindow"
+        Title="Sign In"
+        Width="300"
+        Height="300"
+        Background="#f0f0f0">
+
+    <Grid Name="MainGrid" ColumnDefinitions="50, *, 50" RowDefinitions="50, *, 50, 50, 50, *">
+        <TextBlock Grid.Column="1" Grid.Row="0" 
+                   Text="Sign In"
+                   FontSize="18" 
+                   Foreground="Black"
+                   HorizontalAlignment="Center" 
+                   VerticalAlignment="Center"
+                   FontWeight="SemiBold"/>
+
+        <StackPanel Grid.Column="1" Grid.Row="1"
+                    VerticalAlignment="Top"
+                    Spacing="10"
+                    Margin="0,10,0,0">
+            <TextBox Name="LoginTextBox" 
+                     Watermark="Email or Username"
+                     Width="200" 
+                     Background="White" 
+                     BorderBrush="#d0d0d0" 
+                     Padding="10,5" 
+                     Foreground="Gray"
+                     HorizontalAlignment="Center"/>
+            <TextBox Name="PasswordTextBox" 
+                     Watermark="Password" 
+                     Width="200" 
+                     Background="White"
+                     BorderBrush="#d0d0d0"
+                     Padding="10,5" 
+                     Foreground="Gray"
+                     HorizontalAlignment="Center"/>
+        </StackPanel>
+
+        <Button Grid.Column="1" Grid.Row="4" 
+                Content="Sign In"
+                Click="SignIn" 
+                HorizontalAlignment="Right"
+                Padding="10,5"
+                Background="#e0e0e0"
+                BorderThickness="0" 
+                CornerRadius="4" 
+                Margin="0,0,10,0"/>
+
+        <TextBlock Grid.Column="1" Grid.Row="5"
+                   Name="MessageTextBlock"
+                   HorizontalAlignment="Center"
+                   Foreground="Red"
+                   Margin="0,10,0,0"/>
+    </Grid>
+</Window>
